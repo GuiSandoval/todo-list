@@ -1,11 +1,14 @@
 import React from 'react'
 import * as S from './styles';
 
-function Content() {
+interface ContentProps {
+  children: React.ReactNode
+}
+
+function Content({ children }: ContentProps) {
   return (
     <S.ContainerContent>
-      <div>input para criar nova tarefa</div>
-      <div>Componente LIst</div>
+      {children}
     </S.ContainerContent>
   )
 }
