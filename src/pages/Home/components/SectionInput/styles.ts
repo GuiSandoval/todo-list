@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerSectionInput = styled.section`
+export const ContainerSectionInput = styled.form`
   display: flex;
   flex-direction: row;
   justify-content: center;

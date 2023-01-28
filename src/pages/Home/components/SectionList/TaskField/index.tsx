@@ -1,12 +1,17 @@
 import React from 'react'
 import * as S from './styles';
 
-function TaskField() {
+interface TaskFieldProps {
+  title: string;
+  isCompleted: boolean;
+}
+
+function TaskField({ title, isCompleted }: TaskFieldProps) {
   return (
     <S.ContainerTaskField>
       <div>checkbox</div>
-      <p>Descrição da task</p>
-      <div>Botão de excluir</div>
+      <p>{title}</p>
+      <div>Botão de excluir {isCompleted}</div>
     </S.ContainerTaskField>
   )
 }
