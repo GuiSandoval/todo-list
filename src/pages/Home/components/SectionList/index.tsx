@@ -1,5 +1,6 @@
 import React from 'react'
 import * as S from './styles'
+import { TaskField } from './TaskField';
 
 interface SectionListProps {
   tasks: Array<any>;
@@ -15,7 +16,11 @@ function SectionList({ tasks }: SectionListProps) {
       </S.HeaderSectionList>
 
       <S.ContentSectionList>
-        Conteudo aqui
+        <TaskField />
+        <TaskField />
+        <TaskField />
+        <TaskField />
+        <TaskField />
       </S.ContentSectionList>
     </S.ContainerSectionList>
   )

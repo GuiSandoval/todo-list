@@ -23,6 +23,7 @@ export const ContentSectionList = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 2rem 0;
 `;
 
 const BaseTitleList = styled.h5`
