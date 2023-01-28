@@ -20,7 +20,7 @@ function SectionList({ tasks, changeTaskComplete, deleteTask }: SectionListProps
 
       <S.HeaderSectionList>
         <S.TitleListCreated>Tarefas criadas <span>{tasksCreated.length}</span></S.TitleListCreated>
-        <S.TitleListCompleted>Concluídas <span>{tasksCompleted.length}</span></S.TitleListCompleted>
+        <S.TitleListCompleted>Concluídas <span>{tasksCompleted.length} de {tasksCreated.length}</span></S.TitleListCompleted>
       </S.HeaderSectionList>
 
       <S.ContentSectionList>
