@@ -1,12 +1,14 @@
 import React from 'react'
 import { List } from '../../components/List'
 import { SectionContainer } from '../../layouts/Section'
+import { Header } from '../../components/Header'
 
 function Home() {
   return (
     <SectionContainer>
-      <h1>Olá Mundo</h1>
-      <List />
+      <Header />
+      <div>input para criar nova tarefa</div>
+      <div>Componente LIst</div>
     </SectionContainer>
   )
 }
