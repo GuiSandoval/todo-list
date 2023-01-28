@@ -1,5 +1,6 @@
 import React from 'react'
 import * as S from './styles';
+import { CheckboxStyled } from '../../../../../common/CheckboxStyled';
 
 interface TaskFieldProps {
   title: string;
@@ -9,7 +10,7 @@ interface TaskFieldProps {
 function TaskField({ title, isCompleted }: TaskFieldProps) {
   return (
     <S.ContainerTaskField>
-      <div>checkbox</div>
+      <CheckboxStyled />
       <p>{title}</p>
       <div>Botão de excluir {isCompleted}</div>
     </S.ContainerTaskField>
