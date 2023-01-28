@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { SectionContainer } from '../../layouts/Section'
 import { Header } from '../../components/Header'
@@ -8,8 +8,10 @@ import { ITask } from './interfaces'
 import SectionInput from './components/SectionInput'
 import { SectionList } from './components/SectionList'
 
+
 function Home() {
-  const [tasks, setTasks] = useState<ITask[]>([]);
+  const initialTasks = localStorage.getItem('tasks');
+  const [tasks, setTasks] = useState<ITask[]>(initialTasks ? JSON.parse(initialTasks) : []);
 
   function addTask(task: ITask) {
     const taskExists = tasks.find(t => t.title === task.title);
@@ -30,6 +32,10 @@ function Home() {
     const updatedTasks = tasks.filter(t => t.id !== id);
     setTasks(updatedTasks);
   }
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks])
 
   return (
     <SectionContainer>
