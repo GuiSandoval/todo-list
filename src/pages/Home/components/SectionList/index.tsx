@@ -4,6 +4,7 @@ import * as S from './styles'
 import { ITask } from '../../interfaces';
 
 import { TaskField } from './TaskField';
+import { Notasks } from './NoTasks';
 
 interface SectionListProps {
   tasks: Array<ITask>;
@@ -24,14 +25,16 @@ function SectionList({ tasks, changeTaskComplete, deleteTask }: SectionListProps
       </S.HeaderSectionList>
 
       <S.ContentSectionList>
-        {tasks.map(task => (
-          <TaskField
-            key={task.id}
-            task={task}
-            handleCheck={() => changeTaskComplete(task.id)}
-            handleDelete={() => deleteTask(task.id)}
-          />
-        ))}
+        {tasks.length === 0 ?
+          <Notasks /> :
+          tasks.map(task => (
+            <TaskField
+              key={task.id}
+              task={task}
+              handleCheck={() => changeTaskComplete(task.id)}
+              handleDelete={() => deleteTask(task.id)}
+            />
+          ))}
       </S.ContentSectionList>
     </S.ContainerSectionList>
   )
