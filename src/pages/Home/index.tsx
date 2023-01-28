@@ -1,12 +1,13 @@
 import React from 'react'
 import { List } from '../../components/List'
+import { SectionContainer } from '../../layouts/Section'
 
 function Home() {
   return (
-    <div>
+    <SectionContainer>
       <h1>Olá Mundo</h1>
       <List />
-    </div>
+    </SectionContainer>
   )
 }
 
