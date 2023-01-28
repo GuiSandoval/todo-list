@@ -2,18 +2,22 @@ import React from 'react'
 import * as S from './styles';
 import { CheckboxStyled } from '../../../../../common/CheckboxStyled';
 import { TrashButton } from '../../../../../common/Buttons/TrashButton';
+import { ITask } from '../../../interfaces';
 
 interface TaskFieldProps {
-  title: string;
-  isCompleted: boolean;
+  task: ITask;
+  handleDelete: () => void;
+  handleCheck: () => void;
 }
 
-function TaskField({ title, isCompleted }: TaskFieldProps) {
+function TaskField({ task, handleCheck, handleDelete }: TaskFieldProps) {
+  const { title, isCompleted } = task;
+
   return (
     <S.ContainerTaskField>
-      <CheckboxStyled />
+      <CheckboxStyled onChange={() => handleCheck()} checked={isCompleted} />
       <S.TextTask isCompleted={isCompleted}>{title}</S.TextTask>
-      <TrashButton onClick={() => alert("olá")} />
+      <TrashButton onClick={() => handleDelete()} />
     </S.ContainerTaskField>
   )
 }

@@ -1,16 +1,15 @@
 import React from 'react'
 import * as S from './styles';
 
-function CheckboxStyled() {
-  const [checked, setChecked] = React.useState(false);
+function CheckboxStyled({ ...props }: React.InputHTMLAttributes<HTMLInputElement>) {
 
-  function handleChange() {
-    setChecked(!checked);
-  }
 
   return (
     <S.ContainerCheckboxStyled>
-      <input type="checkbox" checked={checked} onChange={handleChange} />
+      <input
+        type="checkbox"
+        {...props}
+      />
     </S.ContainerCheckboxStyled>
   )
 }

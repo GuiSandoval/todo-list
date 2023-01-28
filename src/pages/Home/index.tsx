@@ -17,12 +17,29 @@ function Home() {
     setTasks(prev => ([...prev, task]));
   }
 
+  function changeTaskComplete(id: number) {
+    const updatedTasks = tasks.map(task => ({ ...task }));
+    const task = updatedTasks.find(task => task.id === id);
+    if (!task) return;
+    task.isCompleted = !task.isCompleted;
+    setTasks(updatedTasks);
+  }
+
+  function deleteTask(id: number) {
+    const updatedTasks = tasks.filter(task => task.id !== id);
+    setTasks(updatedTasks);
+  }
+
   return (
     <SectionContainer>
       <Header />
       <Content>
         <SectionInput addTask={addTask} />
-        <SectionList tasks={tasks} />
+        <SectionList
+          tasks={tasks}
+          changeTaskComplete={changeTaskComplete}
+          deleteTask={deleteTask}
+        />
       </Content>
     </SectionContainer>
   )

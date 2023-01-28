@@ -7,9 +7,11 @@ import { TaskField } from './TaskField';
 
 interface SectionListProps {
   tasks: Array<ITask>;
+  changeTaskComplete: (id: number) => void;
+  deleteTask: (id: number) => void;
 }
 
-function SectionList({ tasks }: SectionListProps) {
+function SectionList({ tasks, changeTaskComplete, deleteTask }: SectionListProps) {
   const tasksCreated = tasks.filter(task => !task.isCompleted);
   const tasksCompleted = tasks.filter(task => task.isCompleted);
 
@@ -25,8 +27,9 @@ function SectionList({ tasks }: SectionListProps) {
         {tasks.map(task => (
           <TaskField
             key={task.id}
-            title={task.title}
-            isCompleted={task.isCompleted}
+            task={task}
+            handleCheck={() => changeTaskComplete(task.id)}
+            handleDelete={() => deleteTask(task.id)}
           />
         ))}
       </S.ContentSectionList>
