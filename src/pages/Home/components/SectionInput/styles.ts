@@ -5,6 +5,7 @@ export const ContainerSectionInput = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 3rem;
   width: 100%;
 
   > input {
@@ -12,7 +13,7 @@ export const ContainerSectionInput = styled.section`
     color: #fff;
     border: 1px solid transparent;
     border-radius: 0.5rem;
-    height: 3rem;
+    height: 100%;
     width: 100%;
     padding: 0 1rem;
     outline: none;
@@ -25,6 +26,29 @@ export const ContainerSectionInput = styled.section`
   }
 
   > button {
-    margin: 0 0 0 1rem;
+    background: #1e6f9f;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    height: 100%;
+    width: 100%;
+    max-width: 6rem;
+    border-radius: 0.5rem;
+    margin: 0 0 0 0.4rem;
+    padding: 0;
+    transition: 0.2s;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &:after {
+      content: "+";
+      display: inline-block;
+      margin: 0 0 0 0.4rem;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      width: 1rem;
+    }
   }
 `;
