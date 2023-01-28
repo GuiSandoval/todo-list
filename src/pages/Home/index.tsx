@@ -18,15 +18,16 @@ function Home() {
   }
 
   function changeTaskComplete(id: number) {
-    const updatedTasks = tasks.map(task => ({ ...task }));
-    const task = updatedTasks.find(task => task.id === id);
-    if (!task) return;
-    task.isCompleted = !task.isCompleted;
+    const updatedTasks = tasks.map(t => {
+      if (t.id === id) t.isCompleted = !t.isCompleted;
+      return t;
+    }
+    );
     setTasks(updatedTasks);
   }
 
   function deleteTask(id: number) {
-    const updatedTasks = tasks.filter(task => task.id !== id);
+    const updatedTasks = tasks.filter(t => t.id !== id);
     setTasks(updatedTasks);
   }
 
