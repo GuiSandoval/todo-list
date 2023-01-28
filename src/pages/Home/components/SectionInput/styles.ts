@@ -7,6 +7,7 @@ export const ContainerSectionInput = styled.section`
   align-items: center;
   height: 3rem;
   width: 100%;
+  margin: 0 0 4rem 0;
 
   > input {
     background: #262626;
